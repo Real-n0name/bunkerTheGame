@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,9 +39,12 @@ namespace bunkerTheGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Rules f3 = new Rules();
-            this.Hide();
-            f3.Show();
+            var p = new Process();
+            p.StartInfo = new ProcessStartInfo(@"D:\Study\practice2022\bunkerTheGame\bunkerInfo\rules.pdf")
+            {
+                UseShellExecute = true
+            };
+            p.Start();
         }
     }
 }
